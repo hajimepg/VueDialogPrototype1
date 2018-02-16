@@ -8,7 +8,11 @@
 
     <body>
         <div id="app">
-            {{ message }}
+            <button id="show-modal" @click="showModal = true">Show Modal</button>
+
+            <ok-dialog v-if="showModal" @close="showModal = false">
+                <h3 slot="header">custom header</h3>
+            </ok-dialog>
         </div>
         <script src="../dist/renderer/bundle.js"></script>
     </body>

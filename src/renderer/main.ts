@@ -1,8 +1,12 @@
 import Vue from "vue";
+import OkDialog from "./component/okDialog.vue";
 
 const app = new Vue({
     el: "#app",
     data: {
-        message: "hello from vue"
-    }
+        showModal: false
+    },
+    components: {
+        "ok-dialog": OkDialog,
+    },
 });
