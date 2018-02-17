@@ -12,12 +12,8 @@
                     </div>
 
                     <div class="modal-footer">
-                        <slot name="footer">
-                            default footer
-                            <button class="modal-default-button" @click="$emit('close')">
-                                OK
-                            </button>
-                        </slot>
+                        <slot name="footer">default footer</slot>
+                        <button class="modal-default-button" v-on:click="$emit('close')">OK</button>
                     </div>
                 </div>
             </div>
@@ -76,16 +72,8 @@
         float: right;
     }
 
-    .modal-enter {
+    .modal-enter, .modal-leave-active {
         opacity: 0;
-    }
-
-    .modal-leave-active {
-        opacity: 0;
-    }
-
-    .modal-enter .modal-container, .modal-leave-active .modal-container {
-        -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
 </style>

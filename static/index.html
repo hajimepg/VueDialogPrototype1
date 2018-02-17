@@ -8,10 +8,11 @@
 
     <body>
         <div id="app">
-            <button id="show-modal" @click="showModal = true">Show Modal</button>
+            <button id="show-modal" v-on:click="showModal = true">Show Modal</button>
 
-            <ok-dialog v-if="showModal" @close="showModal = false">
+            <ok-dialog v-if="showModal" v-on:close="showModal = false">
                 <h3 slot="header">custom header</h3>
+                <span slot="footer">custom footer</span>
             </ok-dialog>
         </div>
         <script src="../dist/renderer/bundle.js"></script>
