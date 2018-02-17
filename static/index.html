@@ -8,12 +8,27 @@
 
     <body>
         <div id="app">
-            <button id="show-modal" v-on:click="showModal = true">Show Modal</button>
+            <div class="ok-dialog">
+                <button id="show-modal" v-on:click="showModal = true">Show Modal</button>
 
-            <ok-dialog v-if="showModal" v-on:close="showModal = false">
-                <h3 slot="header">custom header</h3>
-                <span slot="footer">custom footer</span>
-            </ok-dialog>
+                <ok-dialog v-if="showModal" v-on:close="showModal = false">
+                    <h3 slot="header">custom header</h3>
+                    <span slot="footer">custom footer</span>
+                </ok-dialog>
+            </div>
+
+            <div class="ok-cancel dialog">
+                <button v-on:click="onOKCancelDialogOpen">Show OK/Cancel</button>
+
+                <ok-cancel-dialog
+                    v-if="showOkCancel"
+                    v-on:ok="onOkCancelDialogClosedByOk"
+                    v-on:cancel="onOkCancelDialogClosedByCancel"
+                >
+                </ok-cancel-dialog>
+
+                {{ showOkCancelClosedBy }}
+            </div>
         </div>
         <script src="../dist/bundle.js"></script>
     </body>
