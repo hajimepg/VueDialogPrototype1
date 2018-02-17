@@ -17,7 +17,7 @@
                 </ok-dialog>
             </div>
 
-            <div class="ok-cancel dialog">
+            <div class="ok-cancel-dialog">
                 <button v-on:click="onOKCancelDialogOpen">Show OK/Cancel</button>
 
                 <ok-cancel-dialog
@@ -28,6 +28,19 @@
                 </ok-cancel-dialog>
 
                 {{ showOkCancelClosedBy }}
+            </div>
+
+            <div class="input-text-dialog">
+                <button v-on:click="onInputTextDialogOpen">Show Input Text</button>
+
+                <input-text-dialog
+                    v-if="showInputText"
+                    v-on:ok="onInputTextDialogClosedByOk"
+                    v-on:cancel="onInputTextDialogClosedCancel"
+                >
+                </input-text-dialog>
+
+                {{ inputText }}
             </div>
         </div>
         <script src="../dist/bundle.js"></script>
