@@ -3,6 +3,7 @@ import Vue from "vue";
 import InputTextDialog from "./component/inputTextDialog.vue";
 import OkCancelDialog from "./component/okCancelDialog.vue";
 import OkDialog from "./component/okDialog.vue";
+import OuterCloseDialog from "./component/outerCloseDialog.vue";
 
 const app = new Vue({
     el: "#app",
@@ -12,11 +13,13 @@ const app = new Vue({
         showOkCancelClosedBy: "",
         showInputText: false,
         inputText: "",
+        showOuterCloseDialog: false,
     },
     components: {
         "ok-dialog": OkDialog,
         "ok-cancel-dialog": OkCancelDialog,
         "input-text-dialog": InputTextDialog,
+        "outer-close-dialog": OuterCloseDialog,
     },
     methods: {
         onOKCancelDialogOpen() {

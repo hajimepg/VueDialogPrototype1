@@ -42,6 +42,13 @@
 
                 {{ inputText }}
             </div>
+
+            <div class="outer-close-dialog">
+                <button id="show-modal" v-on:click="showOuterCloseDialog = true">Show Outer Close</button>
+
+                <outer-close-dialog v-if="showOuterCloseDialog" v-on:close="showOuterCloseDialog = false">
+                </outer-close-dialog>
+            </div>
         </div>
         <script src="../dist/bundle.js"></script>
     </body>
