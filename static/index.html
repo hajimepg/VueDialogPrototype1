@@ -49,6 +49,10 @@
                 <outer-close-dialog v-if="showOuterCloseDialog" v-on:close="showOuterCloseDialog = false">
                 </outer-close-dialog>
             </div>
+
+            <div class="dynamic-dialog">
+                <button id="show-modal" v-on:click="showDynamicDialog">Show Modal by Dynamic</button>
+            </div>
         </div>
         <script src="../dist/bundle.js"></script>
     </body>

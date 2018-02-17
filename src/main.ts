@@ -1,5 +1,6 @@
 import Vue from "vue";
 
+import DynamicOkDialog from "./component/dynamicOkDialog.vue";
 import InputTextDialog from "./component/inputTextDialog.vue";
 import OkCancelDialog from "./component/okCancelDialog.vue";
 import OkDialog from "./component/okDialog.vue";
@@ -20,6 +21,7 @@ const app = new Vue({
         "ok-cancel-dialog": OkCancelDialog,
         "input-text-dialog": InputTextDialog,
         "outer-close-dialog": OuterCloseDialog,
+        "dynamic-ok-dialog": DynamicOkDialog,
     },
     methods: {
         onOKCancelDialogOpen() {
@@ -43,6 +45,13 @@ const app = new Vue({
         },
         onInputTextDialogClosedCancel() {
             this.showInputText = false;
-        }
+        },
+        showDynamicDialog() {
+            const dialog = new DynamicOkDialog().$mount();
+            dialog.$on("close", () => {
+                dialog.$destroy();
+            });
+            this.$el.appendChild(dialog.$el);
+        },
     },
 });
